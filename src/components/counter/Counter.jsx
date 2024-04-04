@@ -13,6 +13,9 @@ function Counter() {
     setCount(count - incBy);
   }
 
+  function resetCounter() {
+    setCount(0);
+  }
   return (
     <>
       <span className="count">{count}</span>
@@ -32,6 +35,10 @@ function Counter() {
         incParent={incrementParent}
         deccrementParent={deccrementParent}
       />
+
+      <button className="counterBtn" onClick={resetCounter}>
+        Reset Counter Value
+      </button>
     </>
   );
 }

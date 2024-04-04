@@ -1,24 +1,20 @@
 import PropTypes from "prop-types";
-import React, { useState } from "react";
+import React from "react";
 
 const CounterButton = ({ incBy, incParent, deccrementParent }) => {
-  const [count, setCount] = useState(0);
-
   function incrementFunction() {
-    setCount(count + incBy);
     incParent(incBy);
   }
   function decrementFunction() {
-    setCount(count - incBy);
     deccrementParent(incBy);
   }
 
   return (
     <div className="Counter">
-      <button className="counterBtn" onClick={incrementFunction}>
+      <button className="counterBtn" onClick={() => incParent(incBy)}>
         +{incBy}
       </button>
-      <button className="counterBtn" onClick={decrementFunction}>
+      <button className="counterBtn" onClick={() => deccrementParent(incBy)}>
         -{incBy}
       </button>
     </div>
